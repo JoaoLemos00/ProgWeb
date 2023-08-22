@@ -9,3 +9,6 @@ def home(request):
 
 def about(request):
     return render(request, 'MeuApp/about.html')
+
+def pagina3(request):
+    return render(request, "MeuApp/pagina3.html")
