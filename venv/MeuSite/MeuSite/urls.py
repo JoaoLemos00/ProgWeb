@@ -21,9 +21,14 @@ from django.urls.conf import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
     path('',MeuSite.views.home, name= 'home'),
+
     path('about', MeuApp.views.about, name = 'about'),
     path('pagina3',MeuApp.views.pagina3, name = 'pag3'),
     path('index',MeuApp.views.index, name = 'index'),
+    path('homeMeuApp', MeuApp.views.home, name = 'homeMeuApp'),
+
     path('contatos', include('contatos.urls'))
+
     ]

@@ -18,7 +18,23 @@
     <!-- place navbar here -->
   </header>
   <main>
-    <h1>HomePage Principal</h1>
+    <h1 class="text-center"> HomePage Principal </h1>
+    
+    <p id="horaAtual" class="card-text display-4 text-center"></p>
+    <p id="saudacao" class="card-text display-4 text-center"></p>
+
+    <div></div>
+    
+    <form action='{% url "contatos:home-contatos" %}' class="text-center">
+      <input type='submit' value='Home contatos' class="btn btn-primary"/>
+    </form>
+
+    <div> </div>
+    
+    <form action='{% url "homeMeuApp" %}'>
+      <input type='submit' value='Home MeuApp' class="btn btn-primary"/>
+    </form>
+
   </main>
   <footer>
     <!-- place footer here -->
@@ -30,6 +46,35 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+
+  <script>
+    function atualizarHora() {
+    var dataAtual = new Date();
+    var hora = dataAtual.getHours();
+    var minutos = dataAtual.getMinutes();
+    var segundos = dataAtual.getSeconds();
+    
+    var horaFormatada = hora < 10 ? "0" + hora : hora;
+    var minutosFormatados = minutos < 10 ? "0" + minutos : minutos;
+    var segundosFormatados = segundos < 10 ? "0" + segundos : segundos;
+
+    if (hora <= 18 && hora < 12){
+      document.getElementById("saudacao").textContent = "Boa Tarde!";
+    }
+    else if (hora >= 6 && hora < 12){
+      document.getElementById("saudacao").textContent = "Boa dia!";
+    }
+    else{
+      document.getElementById("saudacao").textContent = "Boa Noite!";
+    }
+
+    document.getElementById("horaAtual").textContent = horaFormatada + ":" + minutosFormatados + ":" + segundosFormatados;
+  }
+
+  atualizarHora();
+  setInterval(atualizarHora, 1000);
+
   </script>
 </body>
 
