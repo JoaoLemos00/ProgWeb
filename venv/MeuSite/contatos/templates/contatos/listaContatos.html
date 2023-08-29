@@ -16,6 +16,11 @@
             <th>Nome</th>
             <th>Idade</th>
             <th>Salário</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>Data de Nascimento</th>
+            <th>Website</th>
+            <th>Endereco</th>
             <th>Ações disponíveis</th>
         </tr>
         {% for pessoa in pessoas %}
@@ -23,6 +28,11 @@
             <td>{{ pessoa.nome }}</td>
             <td>{{ pessoa.idade }}</td>
             <td>{{ pessoa.salario }}</td>
+            <td>{{ pessoa.email }}</td>
+            <td>{{ pessoa.telefone }}</td>
+            <td>{{ pessoa.dtNasc }}</td>
+            <td>{{ pessoa.website }}</td>
+            <td>{{ pessoa.endereco }}</td>
             <td>
             </td>
         </tr>

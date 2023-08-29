@@ -59,7 +59,7 @@
     var minutosFormatados = minutos < 10 ? "0" + minutos : minutos;
     var segundosFormatados = segundos < 10 ? "0" + segundos : segundos;
 
-    if (hora <= 18 && hora < 12){
+    if (hora <= 18 && hora > 12){
       document.getElementById("saudacao").textContent = "Boa Tarde!";
     }
     else if (hora >= 6 && hora < 12){
