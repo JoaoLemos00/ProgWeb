@@ -13,7 +13,6 @@ class ContatoModel2Form(forms.ModelForm):
         label='Data do nascimento',
         help_text='Nascimento no formato DD/MM/AAAA',
     )
-    
-class Meta:
-    model = Pessoa
-    fields = '__all__'
+    class Meta:
+        model = Pessoa
+        fields = '__all__'
