@@ -1,48 +1,39 @@
-<style type="text/css">
-	.card{
-		max-width: 700px;
-		width: 100%;
-	}
-	.card-body{
-		padding: 20px;
-	}
-</style>
 
-{% if blog_post %}
-<div class="container">
-	<div class="row">
-		<!-- Blog Post -->
-		<div class="card m-auto">
-			<a href="{% url 'blog:detail' post.slug %}">
-				<img class="card-img-top" src="{{blog_post.image.url}}">
-			</a>
-			<div class="card-body mt-2 mb-2">
-				<a href="{% url 'blog:detail' post.slug %}">
-					<h2 class="card-title">{{blog_post.title}}</h2>
-				</a>
-				<p class="card-text">{{blog_post.body|safe|truncatechars:180}}</p>
-				{% if blog_post.author == request.user %}
-					<a href="{% url 'blog:edit' blog_post.slug %}" class="btn btn-primary">Update</a>
-				{% endif %}
-			</div>
-			<div class="card-footer text-muted">
-			  Updated on {{blog_post.date_updated}} by {{blog_post.author}}
-			</div>
-		</div>
-	</div>
+<div class="container ">
+    <div class="row ">
+        <!-- Blog post -->
+        <div class="card m-auto text-bg-dark">
+            <div class="card-body my-2 ">
+                {% if blog_post.author == request.user %}
+                <p class="card-text"> Postado por Você, em {{blog_post.date_published}} </p>
+                {% else %}
+                <p class="card-text"> Postado por {{blog_post.author}}, em {{blog_post.date_updated}} </p>
+                {% endif %}
+                <div class="d-flex justify-content-between align-items-center"> 
+                    <h2 class="card-title">{{blog_post.title}}</h2>
+                </div>
+                <hr>
+                <a href="{% url 'blog:detail' post.slug %}" style="text-decoration: none !important" class="stretched-link link-dark" >
+                    <div class="container">
+                        <p class="card-text text-bg-dark">{{blog_post.body}}</p>
+                    </div>
+                    {% if blog_post.image %}
+                        <hr class="text-bg-dark">
+                        <img class="card-img-top" src="{{blog_post.image.url}}" alt="">
+                    {% endif %}
+                </a>
+            </div>
+            {% if blog_post.date_updated != blog_post.date_published %}
+                <div class="card-footer text-muted">
+                    Atualizado em {{blog_post.date_updated}} 
+                </div>
+            {% else %}
+            <div class="card-footer text-muted text-bg-dark">
+                Post original
+            </div>
+            {% endif %}
+            
+        </div>
+        <!-- END Blog post -->
+    </div>
 </div>
-
-{% else %}
-
-<div class="container">
-	<div class="row">
-		<div class="card m-auto">
-			<div class="card-body mt-2 mb-2">
-				<h2 class="card-title">No results</h2>
-				<p class="card-text">There were no results matching the search: "{{query}}"</p>
-			</div>
-		</div>
-	</div>
-</div>
-
-{% endif %}

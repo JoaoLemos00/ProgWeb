@@ -2,16 +2,15 @@
 
 {% block content %}
 
+<title>Site de Receitas</title>
+
 <div class="container">
-	<div class="d-flex flex-column">
-		<p class="m-auto">You must authenticate to view this page. </p>
-		<p class="m-auto">
-			<a href="{% url 'register' %}">Create an account</a> or 
-			<a href="{% url 'login' %}">login</a>.
-		</p>
+	<div class="alert alert-warning" style = "margin-top: 50px;">
+		<p class="text-center" style="margin-top: 10px;">Precisa estar logado para ver essa Página!</p>
+        <p class="text-center" style="margin-top: 10px;"> Você será redirecionado para o Login em 3 segundos.</p>
 	</div>
 </div>
 
-{% endblock content %}
+<meta http-equiv="refresh" content="3;{% url 'login' %}">
 
-
+{% endblock %}
