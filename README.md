@@ -53,7 +53,7 @@ Clique na imagem da receita ou no título para acessar a página completa da rec
 
 ### 3.1 Criando uma Conta
 
-Para criar uma conta é necessário clicar em login e em cadastre-se. Isso permite a cricao de posts e comentarios, e interagir com outros membros da comunidade.
+Para criar uma conta é necessário clicar em Sing-Up ou login e em cadastre-se. Isso permite a cricao de posts e comentarios, e interagir com outros membros da comunidade.
 
 ### 3.2 Comentando Receitas
 
