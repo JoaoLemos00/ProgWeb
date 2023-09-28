@@ -68,7 +68,7 @@ Acesse seu perfil de usuário para atualizar informações pessoais, email, usua
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Acredito que tudo que foi conversado com o professor está implementado e funcionando.
+Acredito que tudo que foi conversado com o professor está implementado e funcionando. Contudo nao foi implementado a recuperacao de senha por email, mas é possivel ser feita pelo terminal.
 
 Não foram encontrados erros na fase de testes.
 
