@@ -30,7 +30,7 @@ def create_post_view(request):
 
     context['form'] = form
 
-    return render(request,"blog/create_post.html",{})
+    return render(request,"blog/create_post.html",context)
 
 def delete_post_view(request, slug):
     context = {}
