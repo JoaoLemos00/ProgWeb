@@ -30,7 +30,6 @@ class BlogPost(models.Model):
     def __str__(self):
         return self.title
     
-       
 @receiver(post_delete, sender=BlogPost)
 def submission_delete(sender, instance,**kwargs):
     instance.image.delete(False)
@@ -47,7 +46,6 @@ def pre_save_blog_post_receiever(sender,instance, *args, **kwargs):
         
 
 pre_save.connect(pre_save_blog_post_receiever, sender=BlogPost)
-
 
 class CommentBlogPost(models.Model):
 
